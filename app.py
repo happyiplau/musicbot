@@ -37,6 +37,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text #message from user
+
     buttons_template = TemplateSendMessage(
         alt_text='目錄 template',
         template=ButtonsTemplate(
@@ -54,7 +55,7 @@ def handle_message(event):
                 ),
                 MessageTemplateAction(
                     label='關於我們',
-                    text='關於我們''
+                    text='關於我們'
                 )
             ]
         )
