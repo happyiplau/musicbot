@@ -42,7 +42,7 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text=text)) #reply the same message from user
         return 0
-    if text=="1":
+    elif text=="1":
         buttons_template = TemplateSendMessage(
             alt_text='目錄 template',
             template=ButtonsTemplate(
