@@ -37,41 +37,30 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text #message from user
-
-    if text=="0":
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=text)) #reply the same message from user
-        return 0
-    elif text=="1":
-        buttons_template = TemplateSendMessage(
-            alt_text='目錄 template',
-            template=ButtonsTemplate(
-                title='選擇服務',
-                text='請選擇',
-                thumbnail_image_url='https://storage.googleapis.com/biggg/a.jpg',
-                actions=[
-                    MessageTemplateAction(
-                        label='查作業~',
-                        text='查作業~'
-                    ),
-                    MessageTemplateAction(
-                        label='我們是誰',
-                        text='我們是誰'
-                    ),
-                    MessageTemplateAction(
-                        label='你問我答',
-                        text='你問我答'
-                    ),
-                    MessageTemplateAction(
-                        label='我想在youtube查音樂~~~!!!',
-                        text='我想在youtube查音樂~~~!!!'
-                    )
-                ]
-            )
+    buttons_template = TemplateSendMessage(
+        alt_text='目錄 template',
+        template=ButtonsTemplate(
+            title='請選擇以下服務',
+            text='點選後顯示操作方式',
+            thumbnail_image_url='https://storage.googleapis.com/biggg/f48c6734853348ff9f9f473f6d640ef1.gif',
+            actions=[
+                MessageTemplateAction(
+                    label='搜歌模式',
+                    text='搜歌模式'
+                ),
+                MessageTemplateAction(
+                    label='心情模式',
+                    text='心情模式'
+                ),
+                MessageTemplateAction(
+                    label='關於我們',
+                    text='關於我們''
+                )
+            ]
         )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
-        return 0
+    )
+    line_bot_api.reply_message(event.reply_token, buttons_template)
+
 
 import os
 if __name__ == "__main__":
