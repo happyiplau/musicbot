@@ -1,17 +1,5 @@
 # encoding: utf-8
-import re
-import random
-import configparser
-from flask import Flask, request, abort
-from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from bs4 import BeautifulSoup
-import time
-import os
-import  json
-import csv
-import requests
-import getpass
+
 
 from flask import Flask, request, abort
 
@@ -54,7 +42,7 @@ def handle_text_message(event):
         event.reply_token,
         text
     )
-   
+
 
 import os
 if __name__ == "__main__":
