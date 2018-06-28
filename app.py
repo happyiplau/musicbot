@@ -39,7 +39,7 @@ def handle_message(event):
     text = event.message.text #message from user
 
     if text == "搜歌模式":
-        text = "此模式可以推薦你懋想要的歌手的歌曲"
+        text = "此模式可以推薦你想要的歌手的歌曲"
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=text))
