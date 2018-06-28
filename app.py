@@ -1,4 +1,5 @@
 # encoding: utf-8
+from linebot.models import *
 from flask import Flask, request, abort
 
 from linebot import (
