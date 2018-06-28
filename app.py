@@ -36,37 +36,38 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     text = event.message.text #message from user
-    # reply the same message from user
-    
-    if  text=="0":
 
-        buttons_template = TemplateSendMessage(
-            alt_text='目錄 template',
-            template=ButtonsTemplate(
-                title='選擇服務',
-                text='請選擇',
-                thumbnail_image_url='https://1.bp.blogspot.com/-0E4u9O1GPvY/WDuheSWu7xI/AAAAAAALjNc/oD5FVffdIRQGcIj5e0I8mHsnJDdVu3xCACLcB/s1600/AS001452_14.gif',
-                actions=[
-                    MessageTemplateAction(
-                        label='查作業~',
-                        text='查作業~'
-                    ),
-                    MessageTemplateAction(
-                        label='我們是誰',
-                        text='我們是誰'
-                    ),
-                    MessageTemplateAction(
-                        label='你問我答',
-                        text='你問我答'
-                    ),
-                    MessageTemplateAction(
-                        label='我想在youtube查音樂~~~!!!',
-                        text='我想在youtube查音樂~~~!!!'
-                    )
-                ]
-            )
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=text)) #reply the same message from user
+
+    buttons_template = TemplateSendMessage(
+        alt_text='目錄 template',
+        template=ButtonsTemplate(
+            title='選擇服務',
+            text='請選擇',
+            thumbnail_image_url='https://1.bp.blogspot.com/-0E4u9O1GPvY/WDuheSWu7xI/AAAAAAALjNc/oD5FVffdIRQGcIj5e0I8mHsnJDdVu3xCACLcB/s1600/AS001452_14.gif',
+            actions=[
+                MessageTemplateAction(
+                    label='查作業~',
+                    text='查作業~'
+                ),
+                MessageTemplateAction(
+                    label='我們是誰',
+                    text='我們是誰'
+                ),
+                MessageTemplateAction(
+                    label='你問我答',
+                    text='你問我答'
+                ),
+                MessageTemplateAction(
+                    label='我想在youtube查音樂~~~!!!',
+                    text='我想在youtube查音樂~~~!!!'
+                )
+            ]
         )
-        line_bot_api.reply_message(event.reply_token, buttons_template)
+    )
+    line_bot_api.reply_message(event.reply_token, buttons_template)
 
 import os
 if __name__ == "__main__":
