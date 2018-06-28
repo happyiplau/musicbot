@@ -37,7 +37,7 @@ def callback():
 def handle_message(event):
     text = event.message.text #message from user
 
-    if  text: #reply the same message from user
+    if  text== event.message.text: #reply the same message from user
 
         buttons_template = TemplateSendMessage(
             alt_text='目錄 template',
