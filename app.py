@@ -37,12 +37,13 @@ def callback():
 def handle_message(event):
     text = event.message.text #message from user
 
-if text=="0":
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=text)) #reply the same message from user
+    if text=="0":
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=text)) #reply the same message from user
+        return 0
 
-   
+
 
 import os
 if __name__ == "__main__":
