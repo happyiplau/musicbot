@@ -47,15 +47,16 @@ def handle_message(event):
             actions=[
                 MessageTemplateAction(
                     label='搜歌模式',
-                    text='搜歌模式'
+                    
+                   # text='搜歌模式'
                 ),
                 MessageTemplateAction(
                     label='心情模式',
-                    text='心情模式'
+                    #text='心情模式'
                 ),
                 MessageTemplateAction(
                     label='關於我們',
-                    text='關於我們'
+                    #text='關於我們'
                 )
             ]
         )
