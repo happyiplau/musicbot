@@ -1,6 +1,4 @@
 # encoding: utf-8
-
-
 from flask import Flask, request, abort
 
 from linebot import (
@@ -38,11 +36,11 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_text_message(event):
     text = event.message.text #message from user
+
     line_bot_api.reply_message(
         event.reply_token,
-        text
-    )
-
+        TextSendMessage(text=text)) #reply the same message from user
+    
 
 import os
 if __name__ == "__main__":
